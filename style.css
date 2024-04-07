@@ -1,0 +1,235 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --tongue: #c12115;
+  --pupil: #fff;
+  --icing: #f2f2f2;
+  --stroke: #1a1a1a;
+}
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+
+body {
+  padding: 20px;
+  font-size: 1.85em;
+  
+  font-weight:200;
+font-family: 'Great Vibes', cursive;
+margin: 10px;
+
+  border-radius: 30px;
+ 
+  border: 1px solid #f3f3ea;
+
+}
+.container{
+  color: #F5F5DC;
+  margin-bottom: 300px;
+}
+#user {
+    margin-top: -20px;
+}
+
+body {
+  --frosting: hsl(var(--frosting-hue, 0), 100%, 55%);
+  --lightness: 50;
+  --flame: 0;
+  --glow-hue: 40;
+  --glow-saturation: 50;
+  --glow-lightness: 35;
+  --glow-alpha: 0.4;
+  --transparency-alpha: 0;
+  --glow: hsla(var(--glow-hue), calc(var(--glow-saturation) * 1%), calc(var(--glow-lightness) * 1%), var(--glow-alpha));
+  --transparent: hsla(0, 0%, 0%, var(--transparency-alpha));
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* background: hsl(180, 30%, calc(var(--lightness, 50) * 1%)); */
+  background: hsl(180, 30%, calc(var(--lightness, 50) * 1%));
+
+}
+
+.whitespace {
+  width: 7px;
+}
+.birthday-button {
+  position: absolute;
+  transform: scale(0.6);
+  cursor: pointer;
+  margin-top: 20%;
+  
+}
+.birthday-button__text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  /* font-family: sans-serif; */
+  font-weight: bold;
+}
+.birthday-button__text .char {
+  display: inline-block;
+  color: hsl(var(--hue, 0), calc(var(--char-sat, 0) * 1%), calc(var(--char-light, 0) * 1%));
+}
+.birthday-button:before {
+  content: '';
+  position: absolute;
+  height: 240px;
+  width: 240px;
+  background: radial-gradient(var(--glow), var(--transparent) 30%), radial-gradient(var(--glow), var(--transparent) 50%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%) scale(calc(var(--flame) * 3));
+  z-index: 2;
+  filter: blur(15px);
+  opacity: var(--flame);
+}
+.birthday-button:after {
+  content: '';
+  height: 30px;
+  width: 400px;
+  filter: blur(15px);
+  position: absolute;
+  background: radial-gradient(var(--glow), var(--transparent) 20%), radial-gradient(var(--glow), var(--transparent));
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(calc(var(--flame) * 1));
+  opacity: var(--flame);
+}
+.birthday-button__button {
+  width: 240px;
+  height: 100px;
+  position: relative;
+  border: 0;
+  background: var(--icing);
+  border-radius: 14px;
+  cursor: pointer;
+}
+.birthday-button__cake {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 289.5px;
+  display: none;
+}
+.cake__eye-body {
+  fill: var(--stroke);
+}
+.cake__eye-pupil {
+  fill: var(--pupil);
+}
+.cake__tongue {
+  fill: var(--tongue);
+}
+.cake__mouth-opening {
+  fill: var(--stroke);
+  stroke: var(--stroke);
+}
+.cake__sprinkle {
+  --sprinkle: hsl(var(--sprinkle-hue, 0), 100%, 75%);
+  fill: var(--sprinkle);
+}
+.cake__frosting--start {
+  fill: var(--frosting);
+}
+.cake__frosting--duplicate {
+  fill: var(--frosting);
+}
+.candle__flame {
+  opacity: var(--flame, 0);
+}
+.candle__flame-outer {
+  fill: #ff711f;
+}
+.candle__flame-inner {
+  fill: #edca1d;
+}
+.face__stroke {
+  stroke: var(--stroke);
+}
+.cake__candle:nth-of-type(1) {
+  --flame: 0;
+}
+.cake__candle:nth-of-type(2) {
+  --flame: 0;
+}
+.cake__candle:nth-of-type(3) {
+  --flame: 0;
+}
+label {
+  height: 44px;
+  width: 44px;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+label > svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+label path {
+  fill: #476b6b;
+}
+label svg:nth-of-type(1) {
+  display: none;
+}
+[type='checkbox'] {
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}
+:checked ~ label svg:nth-of-type(1) {
+  display: block;
+}
+:checked ~ label svg:nth-of-type(2) {
+  display: none;
+}
+
+/* ========================================================================================================================================= */
+.light {
+  position: absolute;
+  margin: -1vmin 0 0 -1vmin;
+  height: 2vmin;
+  width: 2vmin;
+  border-radius: 100%;
+  mix-blend-mode: color-dodge;
+  transition: box-shadow 2s;
+}
+.light:before, .light:after {
+  position: absolute;
+  bottom: 0;
+  height: 150%;
+  width: 100%;
+  content: "";
+  background: #ff1f60;
+  border-radius: 2em 2em 0 0;
+}
+.light:before {
+  left: 50%;
+  transform: rotate(-45deg);
+  transform-origin: left bottom;
+}
+.light:after {
+  right: 50%;
+  transform: rotate(45deg);
+  transform-origin: right bottom;
+}
+h1:hover + .light {
+  box-shadow: 0 0 0 54vmin rgba(255, 102, 51, 0.125), 0 0 0 146vmin rgba(255, 184, 51, 0.125), 0 0 0 16vmin rgba(92, 255, 51, 0.125), 0 0 0 10vmin rgba(218, 255, 51, 0.125), 0 0 0 128vmin rgba(51, 65, 255, 0.125), 0 0 0 89vmin rgba(51, 255, 204, 0.125), 0 0 0 85vmin rgba(255, 95, 51, 0.125), 0 0 0 134vmin rgba(153, 255, 51, 0.125), 0 0 0 143vmin rgba(51, 184, 255, 0.125), 0 0 0 66vmin rgba(75, 51, 255, 0.125), 0 0 0 9vmin rgba(51, 228, 255, 0.125), 0 0 0 106vmin rgba(248, 255, 51, 0.125), 0 0 0 65vmin rgba(51, 211, 255, 0.125), 0 0 0 86vmin rgba(51, 255, 105, 0.125), 0 0 0 4vmin rgba(255, 170, 51, 0.125), 0 0 0 137vmin rgba(255, 235, 51, 0.125), 0 0 0 45vmin rgba(255, 99, 51, 0.125), 0 0 0 18vmin rgba(51, 255, 112, 0.125), 0 0 0 88vmin rgba(65, 255, 51, 0.125), 0 0 0 95vmin rgba(214, 255, 51, 0.125);
+}
